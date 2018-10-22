@@ -2,6 +2,8 @@ var mySong2;
 var myImage
 var myImage2
 var analyser
+var amp
+var volhistory = []
 
 function preload() {
   mySong2 = loadSound('./elements/Music2.mp3')
@@ -49,12 +51,12 @@ function draw() {
       push()
       noStroke()
       fill(186,67,79,150)
-      ellipse(width/2,height/2,volume*8)
+      ellipse(width/2,height/2,volume*6)
       pop()
       push()
       noStroke()
       fill(214,191,29,75)
-      ellipse(width/2,height/2,volume*3)
+      ellipse(width/2,height/2,volume*2)
       pop()
       push()
       strokeWeight(5)
@@ -70,7 +72,7 @@ function draw() {
       pop()
       //circle
       noStroke()
-      fill(155,96,160,100)
+      fill(255,100)
       ellipse(width/3,height/5,volume/1)
       noStroke()
       fill(83,151,205,100)
@@ -96,7 +98,27 @@ function draw() {
         var circleSize = sizeOffset * maxCircleSize;
         stroke('yellow')
         noFill()
-        ellipse(x, y, volume, volume);
+        ellipse(x, y, volume/2, volume/2);
+
+        var vol = analyser.getLevel();
+              volhistory.push(vol);
+              stroke(255)
+              strokeWeight(1)
+              beginShape();
+              noFill()
+              for (var i =0; i< volhistory.length; i++){
+                var y = map(volhistory[i],0,1, height,0)
+                vertex(i,y);
+
+              }
+
+              endShape();
+
+              if( volhistory.length > width ){
+                volhistory.splice(width,1);
+              }
+
+
 
         if (mouseX < width/2){
             //stop the sound
