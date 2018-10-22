@@ -36,7 +36,7 @@ function draw() {
       mySong2.pause()
     } else {
       //play the soundOut
-      background(225,196,190,100)
+      background(51,73,142,30)
       image(myImage2,volume*2,volume*2,width/2,height/2)
       if(mySong2.isPlaying() == false){
         mySong2.play()
@@ -48,12 +48,12 @@ function draw() {
       //big circle
       push()
       noStroke()
-      fill(211,150,157,100)
+      fill(186,67,79,150)
       ellipse(width/2,height/2,volume*8)
       pop()
       push()
       noStroke()
-      fill(193,105,126,100)
+      fill(214,191,29,75)
       ellipse(width/2,height/2,volume*3)
       pop()
       push()
@@ -70,10 +70,10 @@ function draw() {
       pop()
       //circle
       noStroke()
-      fill('pink')
+      fill(155,96,160,100)
       ellipse(width/3,height/5,volume/1)
       noStroke()
-      fill('#5397CD')
+      fill(83,151,205,100)
       ellipse(width/5,height/2,volume)
       //yellow circle
       push()
@@ -85,7 +85,7 @@ function draw() {
       pop()
       image(myImage3,volume,0,width/8,height/6)
       push()
-      image(myImage2,0,volume,width,height)
+      image(myImage2,0,volume/4,width,height)
       pop()
 
 
