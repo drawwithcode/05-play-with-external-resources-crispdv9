@@ -38,7 +38,7 @@ function draw() {
       mySong2.pause()
     } else {
       //play the soundOut
-      background(51,73,142,30)
+      background(53,53,194,25)
       image(myImage2,volume*2,volume*2,width/2,height/2)
       if(mySong2.isPlaying() == false){
         mySong2.play()
@@ -48,34 +48,35 @@ function draw() {
     }
 
       //big circle
+
       push()
       noStroke()
-      fill(186,67,79,150)
-      ellipse(width/2,height/2,volume*6)
+      fill(201,131,195,50)
+      ellipse(width/2,height/2,volume*8)
       pop()
       push()
       noStroke()
-      fill(214,191,29,75)
-      ellipse(width/2,height/2,volume*2)
+      fill(252,224,68,50)
+      ellipse(width/2,height/2,volume*4)
       pop()
+
+      //lineas blancas
       push()
-      strokeWeight(5)
-      stroke(255,100)
+      strokeWeight(3)
+      stroke(255,50)
       noFill()
       ellipse(width/2,height/2,volume*5)
       pop()
       push()
-      strokeWeight(8)
-      stroke(255,100)
+      strokeWeight(4)
+      stroke(255,50)
       noFill()
       ellipse(width/2,height/2,volume*10)
       pop()
       //circle
-      noStroke()
-      fill(255,100)
-      ellipse(width/3,height/5,volume/1)
-      noStroke()
-      fill(83,151,205,100)
+      stroke(255,100)
+      ellipse(width/3,height/5,volume/2)
+      stroke(255,100)
       ellipse(width/5,height/2,volume)
       //yellow circle
       push()
@@ -85,7 +86,7 @@ function draw() {
       ellipse(random(width,width/10),random(height,height/10),volume/5)
       ellipse(random(width,width/5),random(height,height/10),volume/5)
       pop()
-      image(myImage3,volume,0,width/8,height/6)
+      // image(myImage3,volume,0,width/8,height/6)
       push()
       image(myImage2,0,volume/4,width,height)
       pop()
