@@ -97,7 +97,7 @@ function draw() {
         phase = frameCount * speed;
         var sizeOffset = (cos(phase) + 1) * 0.5;
         var circleSize = sizeOffset * maxCircleSize;
-        stroke('yellow')
+        stroke(252,224,68)
         noFill()
         ellipse(x, y, volume/2, volume/2);
 
@@ -115,8 +115,8 @@ function draw() {
 
               endShape();
 
-              if( volhistory.length > width ){
-                volhistory.splice(width,1);
+              if (volhistory.length > width - 1){
+                volhistory.splice(0,1);
               }
 
 
